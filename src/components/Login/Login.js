@@ -1,16 +1,28 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Routes/AuthProvider';
 import './Login.css';
 
 const Login = () => {
-
+    const {createUserGoogle, } = useContext(AuthContext);
+   
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+    }
+
+    const handleLoginWithGoogle = () =>{
+        createUserGoogle()
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.error(error))
     }
 
     return (
@@ -39,7 +51,7 @@ const Login = () => {
                                 </Button>
                             </div>
                             <div className="other-opt text-center w-50 m-auto">
-                                <button>Google</button>
+                                <button onClick={handleLoginWithGoogle}>Google</button>
                                 <button>Github</button>
                             </div>
                             <p className='text-center'>Don't have an account? please <Link to='/register'>Register</Link></p>
