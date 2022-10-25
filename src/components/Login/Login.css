@@ -1,0 +1,22 @@
+.form-cnt{
+    padding:60px 0px;
+}
+.login-form{
+    border:1px solid gray;
+    border-radius: 10px;
+    padding: 40px;
+}
+.other-opt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.other-opt button{
+    border:1px solid gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding:5px 0px;
+    width:100%;
+    background-color: transparent;
+}

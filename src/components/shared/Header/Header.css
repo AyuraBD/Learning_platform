@@ -1,0 +1,14 @@
+.login a{
+    margin-right:10px;
+    text-decoration: none;
+    color:#000000;
+}
+.login a:hover{
+    color:#382626
+}
+.logout{
+    background-color: aliceblue;
+    border:none;
+    margin-right:10px;
+    border-radius: 5px;
+}
