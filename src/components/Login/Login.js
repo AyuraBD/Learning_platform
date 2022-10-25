@@ -6,8 +6,9 @@ import { AuthContext } from '../../Routes/AuthProvider';
 import './Login.css';
 
 const Login = () => {
-    const {createUserGoogle, } = useContext(AuthContext);
-   
+    const {createUserGoogle, createUserGithub } = useContext(AuthContext);
+
+   //Login with email and password
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
@@ -16,8 +17,19 @@ const Login = () => {
         console.log(email, password);
     }
 
+    //Login with Google
     const handleLoginWithGoogle = () =>{
         createUserGoogle()
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.error(error))
+    }
+
+    //Login with Github
+    const handleLoginWithGithub = () =>{
+        createUserGithub()
         .then(result =>{
             const user = result.user;
             console.log(user);
@@ -52,7 +64,7 @@ const Login = () => {
                             </div>
                             <div className="other-opt text-center w-50 m-auto">
                                 <button onClick={handleLoginWithGoogle}>Google</button>
-                                <button>Github</button>
+                                <button onClick={handleLoginWithGithub}>Github</button>
                             </div>
                             <p className='text-center'>Don't have an account? please <Link to='/register'>Register</Link></p>
                             
