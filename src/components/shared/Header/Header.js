@@ -22,15 +22,15 @@ const Header = () => {
     }
 
     return (
-    <Navbar bg="primary" expand="lg">
+    <Navbar bg="primary" expand="lg" className='p-3'>
       <Container>
-        <Navbar.Brand href="/"> Learning Point</Navbar.Brand>
+        <Navbar.Brand href="/home"> Learning Point</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/courses">Courses</Nav.Link>
-            <Nav.Link href="#link">FAQ</Nav.Link>
-            <Nav.Link href="#link">Blog</Nav.Link>
+            <Nav.Link href="/faq">FAQ</Nav.Link>
+            <Nav.Link href="/blog">Blog</Nav.Link>
           </Nav>
           <div className='d-flex'>
             <>
