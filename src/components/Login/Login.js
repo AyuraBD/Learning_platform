@@ -6,7 +6,7 @@ import { AuthContext } from '../../Routes/AuthProvider';
 import './Login.css';
 
 const Login = () => {
-    const {createUserGoogle, createUserGithub } = useContext(AuthContext);
+    const {createUserGoogle, createUserGithub, logIn} = useContext(AuthContext);
 
    //Login with email and password
     const handleSubmit = e => {
@@ -15,6 +15,13 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        logIn(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error => console.log(error))
     }
 
     //Login with Google
@@ -36,6 +43,7 @@ const Login = () => {
         })
         .catch(error => console.error(error))
     }
+    
 
     return (
         <div className="container">

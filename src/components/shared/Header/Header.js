@@ -12,7 +12,7 @@ const Header = () => {
         setShow(show => !show);
     }
     return (
-    <Navbar bg="success" expand="lg">
+    <Navbar bg="primary" expand="lg">
       <Container>
         <Navbar.Brand href="/"> Learning Point</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -25,6 +25,7 @@ const Header = () => {
           <div className='d-flex'>
             <div className="login">
                 <Link to='/login'>Login</Link>
+                <Link to='/register'>Register</Link>
             </div>
             <button className='logout'>Log Out</button>
             <div className="dark-light">
