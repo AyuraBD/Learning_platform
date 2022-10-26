@@ -1,0 +1,15 @@
+.blog{
+    padding:50px 0px;
+}
+.blog-header{
+    background-color: #a3adc0;
+    padding:20px 10px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+.q-one{
+    margin-bottom: 30px;
+    padding:10px;
+    border:1px solid skyblue;
+    border-radius: 10px;
+}

@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Link, useLoaderData } from 'react-router-dom';
 import Footer from '../shared/Footer/Footer';
+import { FaDownload } from 'react-icons/fa';
 
 const CourseDetails = () => {
     const courseDetails = useLoaderData();
@@ -16,7 +17,12 @@ const CourseDetails = () => {
                 <Row>
                     <Col lg='8'>
                         <div className="courseDetails">
-                            <h4>Course Details</h4>
+                            <div className="heading">
+                                <h4>Course Details</h4>
+                                <button className="icon">
+                                    <FaDownload/>
+                                </button>
+                            </div>
                             <h1>{title}</h1>
                             <img className='img-fluid' src={img} alt="" />
                             <p>{about}</p>
@@ -48,7 +54,7 @@ const CourseDetails = () => {
                                 </li>
                                 <h5>Course Price: ${price}</h5>
                             </ul>
-                            <div className='enroll'><Link to='/'>Enroll Now</Link></div>
+                            <div className='enroll'><Link to='/'>Get Premium Access</Link></div>
                         </div>
                     </Col>
                 </Row>
