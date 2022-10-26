@@ -20,6 +20,7 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            form.reset();
         })
         .catch(error => console.log(error))
     }
@@ -43,7 +44,6 @@ const Login = () => {
         })
         .catch(error => console.error(error))
     }
-    
 
     return (
         <div className="container">

@@ -6,7 +6,7 @@ import { AuthContext } from '../../Routes/AuthProvider';
 import './Register.css';
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, userProfile} = useContext(AuthContext);
 
     const handleRegister = e =>{
         e.preventDefault();
@@ -21,7 +21,17 @@ const Register = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            updateUserProfile(name, photo);
+            form.reset();
         })
+        .catch(error => console.error(error))
+    }
+
+    //Update user profile
+    const updateUserProfile = (name, photo) =>{
+        const profile = { displayName:name, photoURL:photo };
+        userProfile(profile)
+        .then(()=>{})
         .catch(error => console.error(error))
     }
     return (

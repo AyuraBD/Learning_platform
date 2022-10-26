@@ -11,4 +11,17 @@
     border:none;
     margin-right:10px;
     border-radius: 5px;
+    height:35px;
+}
+.user-img{
+    margin-right:10px;
+    transition: all 0.5s;
+}
+.user-name{
+    display: none;
+    margin-right:10px;
+}
+.user-img:hover .user-name{
+    display: block;
+    transition: all 0.5s;
 }
