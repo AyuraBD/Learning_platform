@@ -1,6 +1,7 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Blog from '../components/Blog/Blog';
+import CourseDetails from '../components/Courses/CourseDetails';
 import Courses from '../components/Courses/Courses';
 import Faq from '../components/Faq/Faq';
 import Home from '../components/Home/Home';
@@ -26,6 +27,13 @@ const Routes = () => {
                 {
                     path:'/courses',
                     element:<Courses></Courses>
+                },
+                {
+                    path:'/courses/:id',
+                    loader: async ({params}) => {
+                        return fetch(`http://localhost:5000/courses/${params.id}`)
+                    },
+                    element:<CourseDetails></CourseDetails>,
                 },
                 {
                     path:'/register',

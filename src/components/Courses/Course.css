@@ -1,0 +1,11 @@
+.course-single{
+    background-color: rgb(237, 234, 230);
+}
+.course-cnt{
+    padding:30px;
+}
+.course-cnt .author{
+    border-top:1px solid gray;
+    display: flex;
+    justify-content: space-between;
+}
