@@ -31,7 +31,7 @@ const Routes = () => {
                 {
                     path:'/courses/:id',
                     loader: async ({params}) => {
-                        return fetch(`http://localhost:5000/courses/${params.id}`)
+                        return fetch(`https://learning-point-server-xi.vercel.app/courses/${params.id}`)
                     },
                     element:<CourseDetails></CourseDetails>,
                 },
