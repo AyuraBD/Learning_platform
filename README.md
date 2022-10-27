@@ -1,6 +1,6 @@
 # Getting Started with Learning_Point App
 Server site link: https://learning-point-server-xi.vercel.app/
-Live site link: 
+Live site link: https://unique-vacherin-63f121.netlify.app/login
 
 
 ## Available Scripts
