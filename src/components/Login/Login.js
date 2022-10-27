@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -6,6 +7,7 @@ import { AuthContext } from '../../Routes/AuthProvider';
 import './Login.css';
 
 const Login = () => {
+    const [error, setError] = useState('');
     const {createUserGoogle, createUserGithub, logIn} = useContext(AuthContext);
 
    //Login with email and password
@@ -21,8 +23,12 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            setError('');
         })
-        .catch(error => console.log(error))
+        .catch(error => {
+            console.log(error);
+            setError(error.message);
+        })
     }
 
     //Login with Google
@@ -63,7 +69,7 @@ const Login = () => {
                                 <Form.Control name="password" type="password" placeholder="Password" />
                             </Form.Group>
                             <Form.Text className='text-danger'>
-
+                                {error}
                             </Form.Text>
                             <div className="login-btn text-center mb-3">
                                 <Button variant="primary" type="submit" className='w-50 mt-3'>
